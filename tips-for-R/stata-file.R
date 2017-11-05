@@ -9,6 +9,10 @@
 
 library (foreign)
 
+## changing the directory to where the database is located
+
+setwd ('C:\\Users\\Inspiron\\OneDrive\\trade')
+
 ## reading a file extension Stata
 
 mydata <- read.dta ('data.dta')
@@ -17,7 +21,7 @@ mydata <- read.dta ('data.dta')
 
 newdata <- data.frame ('year' = mydata$year, 'ido' = mydata$ido, 'idd' = mydata$idd, 'trade' = mydata$trade)
 
-## changing directory
+## changing the directory where you want to save the database 
 
 setwd ('C:\\Users\\Inspiron\\OneDrive\\base')
 
