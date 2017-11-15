@@ -3,6 +3,7 @@
 ##  ---      manipulating a base extension dta, that is, extension Stata      ---  ##
 ##  ---                         by Alexandre Loures                           ---  ##
 ##  ---               Vicosa, Minas Gerais, Brazil 2017/11/05                 ---  ##
+##  ---                         update 2017/11/15                             ---  ##
 ##  -----------------------------------------------------------------------------  ##
 ##  -----------------------------------------------------------------------------  ##
 
@@ -21,10 +22,21 @@ mydata <- read.dta ('data.dta')
 
 newdata <- data.frame ('year' = mydata$year, 'ido' = mydata$ido, 'idd' = mydata$idd, 'trade' = mydata$trade)
 
-## changing the directory where you want to save the database 
+## changing the directory where you want to save the database
 
 setwd ('C:\\Users\\Inspiron\\OneDrive\\base')
 
 ## saving in extension for Stata
 
 write.dta (newdata, 'newdata.dta', convert.factors = 'string')
+
+
+##  ----------------------------------------------------------  ##
+##  ----------------------------------------------------------  ##
+##  ---       to save and read in the extension of R       ---  ##
+##  ----------------------------------------------------------  ##
+##  ----------------------------------------------------------  ##
+
+save (newdata, file = 'newdata.RData')
+
+load ('newdata.RData')
